@@ -1,0 +1,1315 @@
+fileFormatVersion: 2
+guid: 8a0fd0ed0218bec4bb255fca4363761b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fuego_normal_101x293_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1751
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30defcbbf8f974a44a6ec9c6f76c4813
+      internalID: 1608074947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1751
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c799a57b23e990147a827c346a484882
+      internalID: -1053218325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1751
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91df64adb28447f498deccfadd89d7bc
+      internalID: 1561791310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1751
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b26d7ef1da47240a4eb58228a94080
+      internalID: -1903302146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1751
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7164c06526127488890948bdf3ec02
+      internalID: -148425802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1751
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd4cae66bec49a4e93590774573258c
+      internalID: -1662966660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1751
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5caf16495d74cf9449c1572f92e87e41
+      internalID: 2105739961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1751
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c76c10b14aaff42bb213266ae1ec32
+      internalID: -1143909737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_8
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1751
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37eb0bbb6501dee41a401b170e601758
+      internalID: -886207524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1451
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c584a8fb951ef24bb248591437a2d5c
+      internalID: 101646741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_10
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1451
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0765f545abb5cd446a2034cafcf86ba6
+      internalID: 270909211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1451
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59a0625198e51d4592e4ddcbfb50c0d
+      internalID: -104862856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_12
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1451
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83c105e045171a4d8053f828e029619
+      internalID: -2123038902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1451
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57d7d0cbc53a6044a41dbb5a6b3ca5f
+      internalID: -1398201913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_14
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1451
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf65c63cf2d5df04fa8824b0bcde0e0a
+      internalID: 655585080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_15
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1451
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a752f5b4ee0ba1d4797abe69ec4d6e3c
+      internalID: -15603407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_16
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1451
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b547dbd9a0b82cb4dbf7114218b9404c
+      internalID: 1936922301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_17
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1451
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f3b4dc9569cbe49adf63e25f687145
+      internalID: 1243652147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1151
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503d42ab756445d428523e84f331fe6a
+      internalID: 1696440147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_19
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1151
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1befa25a64090df43af9a6a3c1b54aa9
+      internalID: -2061682128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_20
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1151
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305fb8bea10e95e4a8875a76a072331a
+      internalID: 2032828157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_21
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1151
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55cd3f221c8ad37448354409d84d97c6
+      internalID: 1212577481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_22
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1151
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa020a0e6d625b489234605e959ed29
+      internalID: -1551241286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_23
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1151
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216c5cb93c9d9594a8a12c1e0201c52b
+      internalID: 1697952051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_24
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1151
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 048731d2d650d8c47960e4aea0aa2241
+      internalID: -205819700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_25
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1151
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf1c4b5e4b664f48b1a1c6bb71d58f1
+      internalID: -1798652468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_26
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1151
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666b5963955c17040bf8eb0a165ae8df
+      internalID: -1394868194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 851
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410275696106b1840b04c29810a15dda
+      internalID: -1080853613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_28
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 851
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1266e282a5f66a14ca6657580fca8c8c
+      internalID: -1963652981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_29
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 851
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d81d8b425924bf4a9f2ec19bef14c37
+      internalID: 1351136148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_30
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 851
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00120a3cfc4e4a44f910c7f97e5635c1
+      internalID: 1063360779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_31
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 851
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a53e69338121a46baf4cafe29e9bbd
+      internalID: 74583413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_32
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 851
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b854eb9eb6e76c64fb5ca4ea984d6f43
+      internalID: 1719406630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_33
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 851
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805c2d8e72badc1468b95f2ac64014d9
+      internalID: 2054544045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_34
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 851
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257f1a3e29f5c44468c2aef13a1f4b29
+      internalID: 939541477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_35
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 851
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f210b1b840d84bb4b875c80a0d8305ad
+      internalID: 1358085408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 551
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a5a20512e7802489154ef8441fb927
+      internalID: 572863082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_37
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 551
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4748c39d5eb844fac93e832d352394
+      internalID: 51810595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_38
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 551
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23575dab3948704d8c2bec99b9909a9
+      internalID: -1640899315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_39
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 551
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5acd0e1db95d4c14e836b3e9ec1b7341
+      internalID: -1518710206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_40
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 551
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3932d5cf904314149b1d4334f3e1e76a
+      internalID: -798767252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_41
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 551
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4235fd9373249854688b0c6b625d0c98
+      internalID: 2038810923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_42
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 551
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35dbf5aaf51ce04cbd08e315a64d73c
+      internalID: -1126533643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_43
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 551
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eac190d40c86cd44becabd55534e43e
+      internalID: 342998721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_44
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 551
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd1626f9b4c344439978ab1c54a6508
+      internalID: 434339738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c004a0dd7aa3ef44a6de23e3b28f185
+      internalID: -1732877344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_46
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 251
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82cc8d0be70f01248a49893e3bf7d35f
+      internalID: 805035757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_47
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 251
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d416aee6d9fa049aa8bde68db32810
+      internalID: 495292235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_48
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 251
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3715da93922e0043a9bbc2130fd23fb
+      internalID: -613546123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_49
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 251
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62779d331909d5a4794ffa033b8862f0
+      internalID: 557875367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_50
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 251
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe5acdf642fc114497dd26930e8fde6
+      internalID: 973610028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_51
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 251
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6748409c8353a52429c9740902430e5d
+      internalID: 1416460236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_52
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 251
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70c50a1c380f824a804201920b4c19b
+      internalID: 2118617645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuego_normal_101x293_53
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 251
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02928062738139a4d81c408da39e3aca
+      internalID: 1681413972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      fuego_normal_101x293_0: 1608074947
+      fuego_normal_101x293_1: -1053218325
+      fuego_normal_101x293_10: 270909211
+      fuego_normal_101x293_11: -104862856
+      fuego_normal_101x293_12: -2123038902
+      fuego_normal_101x293_13: -1398201913
+      fuego_normal_101x293_14: 655585080
+      fuego_normal_101x293_15: -15603407
+      fuego_normal_101x293_16: 1936922301
+      fuego_normal_101x293_17: 1243652147
+      fuego_normal_101x293_18: 1696440147
+      fuego_normal_101x293_19: -2061682128
+      fuego_normal_101x293_2: 1561791310
+      fuego_normal_101x293_20: 2032828157
+      fuego_normal_101x293_21: 1212577481
+      fuego_normal_101x293_22: -1551241286
+      fuego_normal_101x293_23: 1697952051
+      fuego_normal_101x293_24: -205819700
+      fuego_normal_101x293_25: -1798652468
+      fuego_normal_101x293_26: -1394868194
+      fuego_normal_101x293_27: -1080853613
+      fuego_normal_101x293_28: -1963652981
+      fuego_normal_101x293_29: 1351136148
+      fuego_normal_101x293_3: -1903302146
+      fuego_normal_101x293_30: 1063360779
+      fuego_normal_101x293_31: 74583413
+      fuego_normal_101x293_32: 1719406630
+      fuego_normal_101x293_33: 2054544045
+      fuego_normal_101x293_34: 939541477
+      fuego_normal_101x293_35: 1358085408
+      fuego_normal_101x293_36: 572863082
+      fuego_normal_101x293_37: 51810595
+      fuego_normal_101x293_38: -1640899315
+      fuego_normal_101x293_39: -1518710206
+      fuego_normal_101x293_4: -148425802
+      fuego_normal_101x293_40: -798767252
+      fuego_normal_101x293_41: 2038810923
+      fuego_normal_101x293_42: -1126533643
+      fuego_normal_101x293_43: 342998721
+      fuego_normal_101x293_44: 434339738
+      fuego_normal_101x293_45: -1732877344
+      fuego_normal_101x293_46: 805035757
+      fuego_normal_101x293_47: 495292235
+      fuego_normal_101x293_48: -613546123
+      fuego_normal_101x293_49: 557875367
+      fuego_normal_101x293_5: -1662966660
+      fuego_normal_101x293_50: 973610028
+      fuego_normal_101x293_51: 1416460236
+      fuego_normal_101x293_52: 2118617645
+      fuego_normal_101x293_53: 1681413972
+      fuego_normal_101x293_6: 2105739961
+      fuego_normal_101x293_7: -1143909737
+      fuego_normal_101x293_8: -886207524
+      fuego_normal_101x293_9: 101646741
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

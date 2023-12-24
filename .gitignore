@@ -5,17 +5,21 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-Assets/
+#/[Ll]ibrary/
+
+Assets/Animations/
+Assets/Prefabs/
+Assets/Sound/
+Assets/Sprite/
+Assets/TextMesh Pro/
 
 Library/
-
-/[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -40,7 +44,6 @@ Library/
 ExportedObj/
 .consulo/
 *.csproj
-*.unityproj
 *.sln
 *.suo
 *.tmp
