@@ -20,7 +20,7 @@
 <img width="80%" height="60%" src="https://github.com/gdevhun/RobotWave/assets/150761282/d03439c9-8f98-4d46-86d5-62312af16b81"/> <br/>
 - 게임시작 
   
-<img width="80%" src="https://github.com/2ndUNIJAM/WildwestRoad/assets/150761282/f2384d36-97a2-4f92-98ae-7a9e4140f504"/> <br/>
+<img width="80%" src="https://github.com/gdevhun/RobotWave/assets/150761282/c0d4e1f0-8962-4b62-bf4d-1cf92ccde5d8"/> <br/>
 - 아이템 선택 인게임 씬
 - 아이템을 획득하여 원하는 능력을 선택 강화하여 적의 공격을 피하세요.
 - 보스를 잡으면 승리합니다.
