@@ -1,6 +1,5 @@
 # 유니티 개인 프로젝트
 <img width="80%" src="https://github.com/gdevhun/RobotWave/assets/150761282/3a337199-6104-4102-82e6-1ee17f631e20"/>
-- 게임로비 씬
 
 ## 개발 기간
 - 2023.8.26 ~ 2023.12.11
