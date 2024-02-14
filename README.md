@@ -10,7 +10,8 @@
 <br/>
 
 ## 기술 스택
-<img src="https://img.shields.io/badge/Unity-FFFFFF?style=for-the-badge&logo=Unity&logoColor=black"> 2022.3.3f1
+<img src="https://img.shields.io/badge/Unity-FFFFFF?style=for-the-badge&logo=Unity&logoColor=black"> 
+- 2022.3.3f1
 
 
 # RobotWave 🕹️
