@@ -1,7 +1,7 @@
 # [유니티 개인 프로젝트1]
 <img width="80%" src="https://github.com/gdevhun/RobotWave/assets/150761282/3a337199-6104-4102-82e6-1ee17f631e20"/>
 
-## 개발 기간
+## 개발 기간 🧑🏻‍💻
 - 2023.8.26 ~ 2023.12.11
 
 ## 역할 분담
@@ -10,9 +10,10 @@
 <br/>
 
 ## 기술 스택
-<img src="https://img.shields.io/badge/Unity-FFFFFF?style=for-the-badge&logo=Unity&logoColor=black">
+<img src="https://img.shields.io/badge/Unity-FFFFFF?style=for-the-badge&logo=Unity&logoColor=black"> 2022.3.3f1
 
-# RobotWave
+
+# RobotWave 🕹️
 <img width="80%" height="60%" src="https://github.com/gdevhun/RobotWave/assets/150761282/da8efd5a-d427-4207-b5bd-fb115473f6ca"/> <br/>
 - 게임설명 씬
 
