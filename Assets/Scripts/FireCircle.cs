@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireCircle : MonoBehaviour
 {
     public GameObject rotatingObjectPrefab; // 회전하는 물체의 프리팹
-    public float rotationSpeed = 5f; // 물체의 회전 속도
+    public float rotationSpeed = 75f; // 물체의 회전 속도
     public Transform playerTrans;
 	private List<GameObject> rotatingFireList = new List<GameObject>(); // 생성된 물체들을 담을 리스트
 	public float additiveDmg = 0;
@@ -26,7 +26,7 @@ public class FireCircle : MonoBehaviour
 	{
 		//하나를 생성해서 리스트에 넣기
 		GameObject rotatingObject = Instantiate(rotatingObjectPrefab, Vector3.zero, Quaternion.identity);
-		rotatingObject.transform.SetParent(transform);
+		rotatingObject.transform.SetParent(this.transform);
 		rotatingObject.GetComponent<Bullet>().additiveDamage = additiveDmg;
 		rotatingFireList.Add(rotatingObject);
 
