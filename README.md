@@ -24,13 +24,13 @@
 <img width="80%" src="https://github.com/gdevhun/RobotWave/assets/150761282/6d6cb2d4-a57f-4629-9144-a8b9a64ba2f2"/> <br/>
 - 아이템 선택 인게임 씬
 - 아이템을 획득하여 원하는 능력을 선택 강화하여 적의 공격을 피하세요.
-- 보스를 잡으면 승리합니다.
+- 보스로봇을 잡으면 승리합니다.
   
 <img width="80%" src="https://github.com/gdevhun/RobotWave/assets/150761282/ef45f91b-c95d-4b8d-be32-be3acde552dc"/> <br/>
 - 플레이어는 좌측 상단의 대쉬, 궁극기를 활용할 수 있습니다. (쿨타임존재)
   
 <img width="80%" src="https://github.com/gdevhun/RobotWave/assets/150761282/3407b524-1da5-428e-8fb5-054c02b274ef"/> <br/>
-- 끝까지 살아남아 보스를 처치하세요.
+- 로봇들의 공격을 피해 끝까지 살아남아 보스로봇을 처치하세요.
 
 <img width="80%" src="https://github.com/gdevhun/RobotWave/assets/150761282/7f78dd3a-898e-4bd0-9bda-364e1a553571"/> <br/>
 - 체력이 다 달게 되면 패배합니다.
