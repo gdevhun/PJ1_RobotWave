@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class Enemy : MonoBehaviour
-{   //enemy´Â playerÀ§Ä¡¸¦ ¾Ë°í µû¶ó°¡¾ßÇÔ.
+{   //enemyëŠ” playerìœ„ì¹˜ë¥¼ ì•Œê³  ë”°ë¼ê°€ì•¼í•¨.
     private Transform targetTransform;
     private HpBar hpBar;
     [SerializeField]
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        //tagÀÌ¸§À¸·Î À§Ä¡Á¤º¸ player°¡Á®¿À±â
+        //tagì´ë¦„ìœ¼ë¡œ ìœ„ì¹˜ì •ë³´ playerê°€ì ¸ì˜¤ê¸°
         targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
         hpBar = GetComponentInChildren<HpBar>();
         animator = GetComponent<Animator>();
@@ -82,20 +82,20 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
 	{
-        //¹«¾ğ°¡Ãæµ¹Çß´Âµ¥ tagµÈ °ªÀÌ ÃÑ¾ËÀÌ¶ó¸é
+        //ë¬´ì–¸ê°€ì¶©ëŒí–ˆëŠ”ë° tagëœ ê°’ì´ ì´ì•Œì´ë¼ë©´
         if (other.gameObject.tag == "Bullet")
         {
             
             Bullet bullet = other.gameObject.GetComponent<Bullet>();
             hp -= bullet.Damage();
-            // ÅØ½ºÆ® ¼³Á¤ ¹× È°¼ºÈ­
+            // í…ìŠ¤íŠ¸ ì„¤ì • ë° í™œì„±í™”
             Debug.Log(bullet.Damage());
 
            
             DamageTextManager.instance.ShowDamageText(transform, bullet.Damage());
             bullet.ActiveExplosion();
 
-			if (hp <= 0) //ÃÑ¾Ë Ãæµ¹ÈÄ Ã¼·ÂÀÌ 0ÀÌÇÏ·Î ¶³¾îÁú¶§
+			if (hp <= 0) //ì´ì•Œ ì¶©ëŒí›„ ì²´ë ¥ì´ 0ì´í•˜ë¡œ ë–¨ì–´ì§ˆë•Œ
 			{
                 ScoreUI.instance.GetScore(this.score);
                 bool isGameOver = false;
@@ -113,7 +113,7 @@ public class Enemy : MonoBehaviour
                     GameManager.instance.SetGameOver(true);
 				}
 			}
-			else //ÃÑ¾Ë Ãæµ¹ ÈÄ Ã¼·ÂÀÌ ³²¾ÆÀÖÀ» ¶§
+			else //ì´ì•Œ ì¶©ëŒ í›„ ì²´ë ¥ì´ ë‚¨ì•„ìˆì„ ë•Œ
             {   
                 spriteRenderer.color = hitColor;
                 Invoke("ResetColor", 0.1f);
