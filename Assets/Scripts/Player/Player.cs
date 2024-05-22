@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using TMPro;
 
@@ -27,7 +29,7 @@ public class Player : MonoBehaviour
     private float maxHP;
     private float hp;
 
-    private float collisionDamageTime = 0.1f;
+    private readonly float collisionDamageTime = 0.1f;
     private float lastDamagedTime;
 
     private SpriteRenderer spriteRenderer;
@@ -86,12 +88,12 @@ public class Player : MonoBehaviour
             transform.position += moveTo * moveSpeed * Time.deltaTime;
         }
         else
-        {   //´ë½¬È°¼ºÈ­  
+        {   //ëŒ€ì‰¬í™œì„±í™”  
 			transform.position += dashVec * moveSpeed * 1.6f * Time.deltaTime;
             dashTime -= Time.deltaTime;
 		}
 
-		// ½ºÆäÀÌ½º¸¦ ´©¸£¸é isRollingÀ» true·Î ¼³Á¤
+		// ìŠ¤í˜ì´ìŠ¤ë¥¼ ëˆ„ë¥´ë©´ isRollingì„ trueë¡œ ì„¤ì •
 		if (Input.GetKeyDown(KeyCode.Space))
         {
             if (TryGetComponent(out SkillCoolTimer skillCoolTimer))
@@ -99,14 +101,13 @@ public class Player : MonoBehaviour
                 if (!skillCoolTimer.skillcool)
                 {
 
-					ShowItemMessage("´ë½¬!");
+					ShowItemMessage("ëŒ€ì‰¬!").Forget();
 					animator.SetBool("isRolling", true);
                     isRolling = true;
                     dashVec = moveTo;
                     dashTime = 0.4f;
-					//StartCoroutine(DashSkill(moveTo));
 					skillCoolTimer.SkillCool();
-                    Invoke("DisableRollingAnimation", 0.3f);
+                    DisableRollingAnimation().Forget();
                 }
             }
         }
@@ -118,7 +119,7 @@ public class Player : MonoBehaviour
                 {
                     fskillCoolTimer.SkillCool();
                     GameManager.instance.isFeverMode = true;
-                    SetFevermode();
+                    SetFeverMode();
                 }
             }
         }
@@ -133,7 +134,7 @@ public class Player : MonoBehaviour
         
   
 
-        // FlipÀ» Ã¼Å©
+        // Flipì„ ì²´í¬
         if (direction.x > 0)
         {
             isFlipped = false;
@@ -143,29 +144,29 @@ public class Player : MonoBehaviour
             isFlipped = true;
         }
         
-        // Flip ¿©ºÎ¿¡ µû¶ó ½ºÄÉÀÏ Á¶Àı
+        // Flip ì—¬ë¶€ì— ë”°ë¼ ìŠ¤ì¼€ì¼ ì¡°ì ˆ
         float scaleX = isFlipped ? -Mathf.Abs(currScale.x) : Mathf.Abs(currScale.x);
         float hpBarScaleX = isFlipped ? -Mathf.Abs(currHpBarScale.x) : Mathf.Abs(currHpBarScale.x);
 
         transform.localScale = new Vector3(scaleX, currScale.y, currScale.z);
         hpBar.transform.localScale = new Vector3(hpBarScaleX, currHpBarScale.y, currHpBarScale.z);
-        //¸¶¿ì½ºÅ¬¸¯½Ã ÃÑ¾Ë ±¸Çö
-        if (Input.GetMouseButton(0)) //0 ¿ŞÂÊ¸¶¿ì½ºÅ¬¸¯
+        //ë§ˆìš°ìŠ¤í´ë¦­ì‹œ ì´ì•Œ êµ¬í˜„
+        if (Input.GetMouseButton(0)) //0 ì™¼ìª½ë§ˆìš°ìŠ¤í´ë¦­
 		{
             if (Time.time - lastShotTime >= (GameManager.instance.isFeverMode? feverShootInterval : shootInterval))
-            {   //ÃÑ¾Ë»ı¼º½Ã ¹æÇâ ±¸Çö
+            {   //ì´ì•Œìƒì„±ì‹œ ë°©í–¥ êµ¬í˜„
                 Vector2 bulletDirection = mousePos - transform.position;
                 float angle = Mathf.Atan2(bulletDirection.y, bulletDirection.x)
                     * Mathf.Rad2Deg;
                 Quaternion bulletRotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 if (GameManager.instance.isFeverMode == true)
-                {   //ÇÇ¹ö¸ğµåÁøÀÔ½Ã ½ºÆä¼ÈºÒ·¿»ı¼º
+                {   //í”¼ë²„ëª¨ë“œì§„ì…ì‹œ ìŠ¤í˜ì…œë¶ˆë ›ìƒì„±
                     Bullet bullet = BulletManager.instance.GetSpecialBullet(gunTransform.position, bulletRotation);
                     bullet.additiveDamage = additiveDmg;
                     SoundManager.instance.PlaySFX("SpecialBullet");
                 }
                 else
-                {   //ÀÏ¹İ¸ğµå ºÒ·¿ »ı¼º
+                {   //ì¼ë°˜ëª¨ë“œ ë¶ˆë › ìƒì„±
 
                     Bullet bullet = BulletManager.instance.GetBullet(gunTransform.position, bulletRotation);
                     bullet.additiveDamage = additiveDmg;
@@ -181,8 +182,9 @@ public class Player : MonoBehaviour
         itemGetText.transform.position = Camera.main.WorldToScreenPoint(transform.position + offset2);
     }
 
-    void DisableRollingAnimation() //roll ¿¹¿ÜÃ³¸®ÇÔ¼ö
+    private async UniTaskVoid DisableRollingAnimation() //roll ì˜ˆì™¸ì²˜ë¦¬í•¨ìˆ˜
     {
+	    await UniTask.Delay(TimeSpan.FromSeconds(0.3));
         animator.SetBool("isRolling", false);
         isRolling = false;
     }
@@ -190,54 +192,52 @@ public class Player : MonoBehaviour
     
 
     private void OnTriggerEnter2D(Collider2D other)
-	{   //°ø°İ¹ŞÀ»¶§ È£ÃâµÇ´Â triggerÇÔ¼ö
-        if (other.gameObject.tag.Equals("Enemy") ||
-            other.gameObject.tag == "Boss")
+	{   //ê³µê²©ë°›ì„ë•Œ í˜¸ì¶œë˜ëŠ” triggerí•¨ìˆ˜
+        if (other.gameObject.CompareTag("Enemy") ||
+            other.gameObject.CompareTag("Boss"))
         {
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
             TakeDamage(enemy.attackDamage);
         }
-        else if (other.gameObject.tag == "ItemRed") //¾ÆÀÌÅÛÃæµ¹
+        else if (other.gameObject.CompareTag("ItemRed")) //ì•„ì´í…œì¶©ëŒ
         {
             SoundManager.instance.PlaySFX("ItemGet1");
             UIManager.instance.ActiveItemScene2();
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.tag == "ItemPurple") //¾ÆÀÌÅÛÃæµ¹
-        {   //°ø°İ¼ÓµµÁõ°¡¾ÆÀÌÅÛÀÎ ItemAttackspdup 0.075
+        else if (other.gameObject.CompareTag("ItemPurple")) //ì•„ì´í…œì¶©ëŒ
+        {   //ê³µê²©ì†ë„ì¦ê°€ì•„ì´í…œì¸ ItemAttackspdup 0.075
             SoundManager.instance.PlaySFX("ItemGet1");
             UIManager.instance.ActiveItemScene1();
             Destroy(other.gameObject);
         }   
-        else if (other.gameObject.tag == "ItemDia") //¾ÆÀÌÅÛÃæµ¹
-        {   //°ø°İµ¥¹ÌÁöÁõ°¡¾ÆÀÌÅÛÀÎ ItemAttackdmgup
+        else if (other.gameObject.CompareTag("ItemDia")) //ì•„ì´í…œì¶©ëŒ
+        {   //ê³µê²©ë°ë¯¸ì§€ì¦ê°€ì•„ì´í…œì¸ ItemAttackdmgup
             SoundManager.instance.PlaySFX("ItemGet2");
             UIManager.instance.ActiveItemScene3();
             Destroy(other.gameObject);
         }
     }
-
-
-    public void SetFevermode()
+    private void SetFeverMode()
     {
         FeverEffect.SetActive(true);
-        Invoke("PlayGunGrabSFX", 0.5f);
-        ShowItemMessage("ÇÇ¹ö¸ğµå È°¼ºÈ­!");
+        PlayGunGrabSFX().Forget();
+        ShowItemMessage("í”¼ë²„ëª¨ë“œ í™œì„±í™”!").Forget();
         GameManager.instance.SetFeverMode(true);
-        CancelInvoke("ResetFeverMode");
-        Invoke("ResetFeverMode", 4.5f);
+        ResetFeverMode().Forget();
     }
 
-    private void ResetFeverMode()
+    private async UniTaskVoid ResetFeverMode()
 	{
+		await UniTask.Delay(TimeSpan.FromSeconds(4.5));
         FeverEffect.SetActive(false);
         GameManager.instance.SetFeverMode(false);
 	}
 
 	private void OnCollisionEnter2D(Collision2D other)
-	{   //ÇÑ¹ø Ãæµ¹‰çÀ» ¶§ È£ÃâµÇ´Â collisionÇÔ¼ö
-		if (other.gameObject.tag == "Enemy" ||
-            other.gameObject.tag=="Boss") //Àû°úÃæµ¹
+	{   //í•œë²ˆ ì¶©ëŒë¬ì„ ë•Œ í˜¸ì¶œë˜ëŠ” collisioní•¨ìˆ˜
+		if (other.gameObject.CompareTag("Enemy")||
+            other.gameObject.CompareTag("Boss")) //ì ê³¼ì¶©ëŒ
 		{
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
             TakeCollisionDamage(enemy.collisionDamage);
@@ -246,14 +246,11 @@ public class Player : MonoBehaviour
     }
 
 	private void OnCollisionStay2D(Collision2D other)
-	{   //stay->°è¼Ó Ãæµ¹ÇÏ°íÀÖ¾îµµ È£ÃâµÇ´Â ÇÔ¼ö
-
-        if (other.gameObject.tag == "Enemy" ||
-            other.gameObject.tag == "Boss")
-		{
-            Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            TakeCollisionDamage(enemy.collisionDamage);
-        }
+	{
+		//stay->ê³„ì† ì¶©ëŒí•˜ê³ ìˆì–´ë„ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜
+		if (!other.gameObject.CompareTag("Enemy") && !other.gameObject.CompareTag("Boss")) return;
+		Enemy enemy = other.gameObject.GetComponent<Enemy>();
+        TakeCollisionDamage(enemy.collisionDamage);
 	}
     private void TakeCollisionDamage(float damage)
 	{
@@ -265,10 +262,10 @@ public class Player : MonoBehaviour
 	}
     private void TakeDamage(float damage)
 	{
-        // ÅØ½ºÆ® ¼³Á¤ ¹× È°¼ºÈ­
+        // í…ìŠ¤íŠ¸ ì„¤ì • ë° í™œì„±í™”
         damageText.text = "-" + damage.ToString();
         damageText.enabled = true;
-        Invoke("DisableDamageText", 1f); // 1ÃÊ ÈÄ ºñÈ°¼ºÈ­
+        DisableDamageText().Forget(); // 1ì´ˆ í›„ ë¹„í™œì„±í™”
 
         if (GameManager.instance.isGameOver)
 		{
@@ -284,61 +281,74 @@ public class Player : MonoBehaviour
 		else
 		{
             spriteRenderer.color = hitColor;
-            Invoke("ResetColor", 0.1f);
+            ResetColor().Forget();
+           
         }
         hpBar.SetHP(hp, maxHP);
 	}
-    private void ResetColor()
+    private async UniTaskVoid ResetColor()
 	{
+		await UniTask.Delay(TimeSpan.FromSeconds(0.1));
         spriteRenderer.color = originalcolor;
 	}
-    private void ShowItemMessage(string message)
+    /*private void ShowItemMessage(string message)
     {
         CancelInvoke("DisableItemGetText");
         itemGetText.text = message;
         itemGetText.enabled = true;
         Invoke("DisableItemGetText", 2f);
-    }
-    private void DisableDamageText()
-    {   //µ¥¹ÌÁöÃâ·Â ºñÈ°¼ºÈ­ ÇÔ¼ö
+    }*/
+
+    private async UniTaskVoid ShowItemMessage(string message)
+    {
+	    itemGetText.text = message;
+	    itemGetText.enabled = true;
+	    await UniTask.Delay(TimeSpan.FromSeconds(2));
+	    itemGetText.enabled = false;
+    } 
+    private async UniTaskVoid DisableDamageText()
+    {   //ë°ë¯¸ì§€ì¶œë ¥ 1ì´ˆ í›„ ë¹„í™œì„±í™” í•¨ìˆ˜
+	    await UniTask.Delay(TimeSpan.FromSeconds(1));
         damageText.enabled = false;
     }
-    private void DisableItemGetText()
-	{   //¾ÆÀÌÅÛÈ¹µæ ¸Ş½ÃÁö Ãâ·Â ºñÈ°¼ºÈ­ ÇÔ¼ö
+    private async UniTaskVoid DisableItemGetText()
+	{   //ì•„ì´í…œíšë“ ë©”ì‹œì§€ ì¶œë ¥ 2ì´ˆ í›„ ë¹„í™œì„±í™” í•¨ìˆ˜
+		await UniTask.Delay(TimeSpan.FromSeconds(2));
         itemGetText.enabled = false;
 	}
-    void PlayGunGrabSFX() //fever¾ÆÀÌÅÛÈ¹µæ½Ã 
-    {   //ºÎ¸¦ ÀÎº¸Å©ÇÔ¼ö.
+    private async UniTaskVoid PlayGunGrabSFX() 
+    {   //feverì•„ì´í…œíšë“ì‹œ 0.5ì´ˆí›„ ì¬ìƒ
+	    await UniTask.Delay(TimeSpan.FromSeconds(0.5));
         SoundManager.instance.PlaySFX("GunGrab");
     }
     
     public void ButtonEvent_Attackup()
 	{
-        ShowItemMessage("°ø°İ·Â Áõ°¡!");
+        ShowItemMessage("ê³µê²©ë ¥ ì¦ê°€!").Forget();
         additiveDmg += 3;
     }
     public void ButtonEvent_AttackSpdUp()
 	{
         SoundManager.instance.PlaySFX("ItemGet1");
         shootInterval -= 0.06f;
-        ShowItemMessage("°ø°İ¼Óµµ Áõ°¡!");
+        ShowItemMessage("ê³µê²©ì†ë„ ì¦ê°€!").Forget();
 
         if (shootInterval < feverShootInterval)
         {
             shootInterval = feverShootInterval;
-            itemGetText.text = "ÃÖ´ë°ø°İ¼Óµµ!";
+            itemGetText.text = "ìµœëŒ€ê³µê²©ì†ë„!";
             itemGetText.enabled = true;
-            Invoke("DisableItemGetText", 2f); // 2ÃÊ ÈÄ ºñÈ°¼ºÈ­
+            DisableItemGetText().Forget(); // 2ì´ˆ í›„ ë¹„í™œì„±í™”
         }      
     }
     public void ButtonEvent_Hpup()
 	{
         hp += 35;
-        // ÅØ½ºÆ® ¼³Á¤ ¹× È°¼ºÈ­
-        ShowItemMessage("Ã¼·Â È¸º¹!");
+        // í…ìŠ¤íŠ¸ ì„¤ì • ë° í™œì„±í™”
+        ShowItemMessage("ì²´ë ¥ íšŒë³µ!").Forget();
         if (hp > maxHP)
         {
-            ShowItemMessage("ÃÖ´ë Ã¼·Â!");
+            ShowItemMessage("ìµœëŒ€ ì²´ë ¥!").Forget();
             hp = maxHP;
         }
         hpBar.SetHP(hp, maxHP);
@@ -349,14 +359,11 @@ public class Player : MonoBehaviour
         //3.5 +0.2 +0.2 +0.2
 		if (moveSpeed >= 4.4)
         {
-			ShowItemMessage("ÃÖ´ë ÀÌµ¿¼Óµµ!");
+			ShowItemMessage("ìµœëŒ€ ì´ë™ì†ë„!").Forget();
 			return;
-        }
-        else
-        {
-			moveSpeed += 0.25f;
-			ShowItemMessage("ÀÌµ¿¼Óµµ Áõ°¡!");
-		}
+        } 
+		moveSpeed += 0.25f;
+		ShowItemMessage("ì´ë™ì†ë„ ì¦ê°€!").Forget();
     }
     
 }
