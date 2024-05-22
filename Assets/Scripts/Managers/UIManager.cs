@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -10,7 +12,6 @@ public class UIManager : MonoBehaviour
     public GameObject ItemDiaPanel;
     public GameObject NotifyBossPanel;
     public GameObject NotifyMiniBossPanel;
-
 
     private void Awake()
     {
@@ -23,32 +24,32 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    /*#################################################################*/
     public void NotifyBossText() //보스밎 준보스 알림텍스트 (notifyText 스크립트연결)
 	{
         NotifyBossPanel.SetActive(true);
         NotifyBossPanel.GetComponentInChildren<NotifyText>().DisplayBossMessage();
-        Invoke("UnactiveBossPanel", 5f);
-        //NotifyBossPanel.SetActive(false); 9
+        UnActiveMiniBossPanel().Forget();
     }
     public void NotifyMiniBossText()
     {
         NotifyMiniBossPanel.SetActive(true);
 		NotifyMiniBossPanel.GetComponentInChildren<NotifyText>().DisplayMiniBossMessage();
-        Invoke("UnactiveMiniBossPanel", 6f);
-        //NotifyMiniBossPanel.SetActive(false);
+        UnActiveBossPanel().Forget();
     }
 
-	public void UnactiveBossPanel()
-	{   //메세지 출력 후 비활성화를 위한 함수
+	private async UniTaskVoid UnActiveBossPanel()
+	{   
+        //메세지 출력 후 비활성화를 위한 함수
+        await UniTask.Delay(TimeSpan.FromSeconds(6f));
         NotifyBossPanel.SetActive(false);
 	}
-    public void UnactiveMiniBossPanel()
-    {   //메세지 출력 후 비활성화를 위한 함수
+    private async UniTaskVoid UnActiveMiniBossPanel()
+    {   
+        //메세지 출력 후 비활성화를 위한 함수
+        await UniTask.Delay(TimeSpan.FromSeconds(5f));
         NotifyMiniBossPanel.SetActive(false);
-    }
-    /*#################################################################*/
+    } 
+    
 
 
     public void ActiveItemScene1()  //ItemPurplePanel 액티브
@@ -68,13 +69,12 @@ public class UIManager : MonoBehaviour
         PauseGame();
     }
 
-    /*#################################################################*/
+
     // 특정 함수를 호출하여 게임 화면 중단 및 재시작
     public void PauseAndResumeGame()
     {
         // 게임을 중단하고 원하는 처리를 수행
         PauseGame();
-
     }
     public void PauseGame()
     {

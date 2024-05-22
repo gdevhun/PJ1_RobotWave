@@ -16,10 +16,8 @@ public class BulletManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    [SerializeField]
-    private GameObject bulletPrefab;
-    [SerializeField]
-    private GameObject specialbulletPrefab;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject specialbulletPrefab;
 
     public ExplosionManager expManager;
 
@@ -34,9 +32,7 @@ public class BulletManager : MonoBehaviour
             bullet.SetActive(false);
             Bullet mybullet = bullet.GetComponent<Bullet>();
             bulletPool.Add(mybullet);
-
             
-
             GameObject specialbullet = Instantiate(specialbulletPrefab);
             specialbullet.transform.parent = this.transform;
             specialbullet.SetActive(false);

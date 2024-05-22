@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Bullet : MonoBehaviour
 {
@@ -8,15 +11,8 @@ public class Bullet : MonoBehaviour
 	{
         Melee, Range
 	}
-    [SerializeField]
-    private Type type;
-
-    
-
-    [SerializeField]
-    private float moveSpeed = 5f;
-
-    WaitForSeconds wait;
+    [SerializeField] private Type type;
+    [SerializeField] private float moveSpeed = 5f;
     public float damage;
     public float additiveDamage;
     public float totalDmg;
@@ -25,38 +21,31 @@ public class Bullet : MonoBehaviour
     public float Damage(){
 
         totalDmg= damage + additiveDamage;
-        if (GameManager.instance.isFeverMode == true)
+        if (GameManager.instance.isFeverMode)
 		{
             totalDmg *= 2;
         }
         return totalDmg;
 
     }
-	public float FireDamage(float addtiveDamage)
+	public float FireDamage(float additiveDamage)
 	{
-        this.additiveDamage = addtiveDamage;
+        this.additiveDamage = additiveDamage;
 		totalDmg = damage + additiveDamage;
 
 		return totalDmg;
 	}
-
-
-	// Start is called before the first frame update
 	void Start()
     {
         if(type == Type.Range)
-            StartCoroutine(DisableRoutine());
-    }
-	private void Awake()
-	{
-        wait = new WaitForSeconds(3f);
+            DisableRoutine().Forget();
     }
 
-	IEnumerator DisableRoutine()
-	{
-        yield return wait;
+    private async UniTaskVoid DisableRoutine()
+    {
+        await UniTask.Delay(TimeSpan.FromSeconds(3));
         gameObject.SetActive(false);
-	}
+    }
     
     void Update()
     {
@@ -79,9 +68,9 @@ public class Bullet : MonoBehaviour
     }
     private void SoundEnemyCollide()
     {   //1부터 3까지의 임의의 정수 생성
-        int RandomSoundIndex = Random.Range(1, 4);
+        var randomSoundIndex = Random.Range(1, 4);
         // 생성된 정수 값에 따라 다른 사운드 재생
-        switch (RandomSoundIndex)
+        switch (randomSoundIndex)
         {
             case 1:
                 SoundManager.instance.PlaySFX("BulletCollide1", 0.3f);
@@ -91,8 +80,6 @@ public class Bullet : MonoBehaviour
                 break;
             case 3:
                 SoundManager.instance.PlaySFX("BulletCollide3", 0.3f);
-                break;
-            default:
                 break;
         }
     }

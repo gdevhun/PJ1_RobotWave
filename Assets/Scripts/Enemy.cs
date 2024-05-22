@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using TMPro;
 
 public class Enemy : MonoBehaviour
-{   //enemy는 player위치를 알고 따라가야함.
+{   
     private Transform targetTransform;
     private HpBar hpBar;
     [SerializeField]
@@ -83,15 +85,11 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
 	{
         //무언가충돌했는데 tag된 값이 총알이라면
-        if (other.gameObject.tag == "Bullet")
+        if (other.gameObject.CompareTag("Bullet"))
         {
-            
             Bullet bullet = other.gameObject.GetComponent<Bullet>();
             hp -= bullet.Damage();
             // 텍스트 설정 및 활성화
-            Debug.Log(bullet.Damage());
-
-           
             DamageTextManager.instance.ShowDamageText(transform, bullet.Damage());
             bullet.ActiveExplosion();
 
@@ -99,7 +97,7 @@ public class Enemy : MonoBehaviour
 			{
                 ScoreUI.instance.GetScore(this.score);
                 bool isGameOver = false;
-				if (gameObject.tag == "Boss")
+				if (gameObject.CompareTag("Boss"))
 				{
                     isGameOver = true;
                     SoundManager.instance.PlaySFX("BossDead");
@@ -116,18 +114,19 @@ public class Enemy : MonoBehaviour
 			else //총알 충돌 후 체력이 남아있을 때
             {   
                 spriteRenderer.color = hitColor;
-                Invoke("ResetColor", 0.1f);
+                ResetColor().Forget();
             }
             hpBar.SetHP(hp, maxHP);
         }
 	}
-    private void ResetColor()
-	{
+    private async UniTaskVoid ResetColor()
+    {
+	    await UniTask.Delay(TimeSpan.FromSeconds(0.1));
         spriteRenderer.color = originalColor;
 	}
     public void SetGameOver()
 	{
-        if (gameObject.tag == "Enemy" || gameObject.tag=="Boss")
+        if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Boss"))
         {
             animator.SetTrigger("isGameOver");
         }

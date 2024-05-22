@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
@@ -30,11 +32,7 @@ public class GameManager : MonoBehaviour
 	private GameObject healthBar;
 	[SerializeField]
 	private GameObject HUD;
-
-
-
-
-
+	
 	[HideInInspector]
 	public bool isFeverMode = false;
 	[HideInInspector]
@@ -74,27 +72,29 @@ public class GameManager : MonoBehaviour
 
 			if (isPlayerWin)
 			{
-				Invoke("DestroyAllEnemies", 2f);
-				Invoke("ShowPlayerWinPanel", 3.5f);
+				DestroyAllEnemies().Forget();
+				ShowPlayerWinPanel().Forget();
 			}
 			else
 			{
-				Invoke("ShowRobotWinPanel", 2f);
+				ShowRobotWinPanel().Forget();
 			}
 		}
 	}
 
 	
-	private void ShowPlayerWinPanel()
+	private async UniTaskVoid ShowPlayerWinPanel()
 	{
+		await UniTask.Delay(TimeSpan.FromSeconds(3.5));
 		playerWinPanel.SetActive(true);
 		Cursor.visible = true;
 		myCursor.SetActive(false);
 		SoundManager.instance.StopBGM();
 		SoundManager.instance.PlayBGM("GameWin");
 	}
-	private void ShowRobotWinPanel()
+	private async UniTaskVoid ShowRobotWinPanel()
 	{
+		await UniTask.Delay(TimeSpan.FromSeconds(2));
 		FireCircle fireCircle = FindObjectOfType<FireCircle>();
 		fireCircle.gameObject.SetActive(false);
 
@@ -128,8 +128,9 @@ public class GameManager : MonoBehaviour
 		HUD.SetActive(true);
 		player.enabled = true;
 	}
-	private void DestroyAllEnemies()
+	private async UniTaskVoid DestroyAllEnemies()
 	{
+		await UniTask.Delay(TimeSpan.FromSeconds(3.5));
 		Enemy[] enemies = FindObjectsOfType<Enemy>();
 		foreach (Enemy enemy in enemies)
 		{

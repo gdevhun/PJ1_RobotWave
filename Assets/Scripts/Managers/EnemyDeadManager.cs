@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class EnemyDeadManager : MonoBehaviour
 {
     public static EnemyDeadManager instance;
     public GameObject deadPrefab;
-    private List<GameObject> EnemyDeadAnimPool = new List<GameObject>();
+    private List<GameObject> enemyDeadAnimPool = new List<GameObject>();
     private void Awake()
     {
         if (instance == null)
@@ -26,33 +28,34 @@ public class EnemyDeadManager : MonoBehaviour
             GameObject exgo = Instantiate(deadPrefab);
             exgo.transform.parent = this.transform;
             exgo.SetActive(false);
-            EnemyDeadAnimPool.Add(exgo);
+            enemyDeadAnimPool.Add(exgo);
         }
     }
 
     public GameObject GetEnemyDeadEffect(Vector3 vec)
     {
-        for (int i = 0; i < EnemyDeadAnimPool.Count; i++)
+        for (int i = 0; i < enemyDeadAnimPool.Count; i++)
         {
-            if (!EnemyDeadAnimPool[i].gameObject.activeInHierarchy)
+            if (!enemyDeadAnimPool[i].gameObject.activeInHierarchy)
             {
-                EnemyDeadAnimPool[i].transform.position = vec;
-                EnemyDeadAnimPool[i].SetActive(true);
-                StartCoroutine(DisabledExgo(EnemyDeadAnimPool[i]));
-                return EnemyDeadAnimPool[i];
+                enemyDeadAnimPool[i].transform.position = vec;
+                enemyDeadAnimPool[i].SetActive(true);
+                DisableExgo(enemyDeadAnimPool[i]).Forget();
+                return enemyDeadAnimPool[i];
             }
 
         }
+        
         // 모든 에네미죽음이펙트가 활성화되어 있다면 새로운 객체 생성하여 반환
         GameObject exgo = Instantiate(deadPrefab);
         exgo.SetActive(true);
-        EnemyDeadAnimPool.Add(exgo);
-        StartCoroutine(DisabledExgo(exgo));
+        enemyDeadAnimPool.Add(exgo);
+        DisableExgo(exgo).Forget();
         return exgo;
     }
-    IEnumerator DisabledExgo(GameObject go)
+    private async UniTaskVoid DisableExgo(GameObject go)
     {
-        yield return new WaitForSeconds(2f);
+        await UniTask.Delay(TimeSpan.FromSeconds(2f));
         go.SetActive(false);
     }
 }
