@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -14,12 +18,12 @@ public class EnemySpawner : MonoBehaviour
 
     private Coroutine enemySpawnCoroutine;
 
-    bool MiniBossEmerged = false;  // 스폰 for문 탈출을위한 불 값 ->ui텍스트한번만보여주기위해
+    bool isMiniBossEmerged = false;  // 스폰 for문 탈출을위한 불 값 ->ui텍스트한번만보여주기위해
 
-    private void MiniBossisEmerged()
+    private void MiniBossEmerged()
 	{
         UIManager.instance.NotifyMiniBossText();
-        MiniBossEmerged = true;
+        isMiniBossEmerged = true;
 	}
 
     private void Start()
@@ -53,9 +57,9 @@ public class EnemySpawner : MonoBehaviour
 
                 if (i > 7) 
 				{
-                    if (!MiniBossEmerged)
+                    if (!isMiniBossEmerged)
 					{
-                        MiniBossisEmerged();
+                        MiniBossEmerged();
 						SpawnMiniBoss();
 					}
 					else

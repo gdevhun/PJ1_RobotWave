@@ -48,22 +48,25 @@ public class GameManager : MonoBehaviour
 	}
 	public void SetGameOver(bool isPlayerWin)
 	{
-		if (isGameOver == false)
+		if (!isGameOver)
 		{
 			isGameOver = true;
 
+			// 적들을 찾아서 게임 오버 상태로 설정
 			Enemy[] enemies = FindObjectsOfType<Enemy>();
 			foreach(Enemy enemy in enemies)
 			{
 				enemy.SetGameOver();
 			}
 
+			// 적 스포너의 스폰을 멈춤
 			EnemySpawner enemySpawner = FindObjectOfType<EnemySpawner>();
 			if (enemySpawner != null)
 			{
 				enemySpawner.StopEnemySpawning();
 			}
 
+			// 아이템 스포너의 스폰을 멈춤
 			ItemSpawner itemSpawner = FindObjectOfType<ItemSpawner>();
 			if (itemSpawner != null)
 			{
