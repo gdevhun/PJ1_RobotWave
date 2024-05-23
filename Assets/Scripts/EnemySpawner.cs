@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     private Coroutine enemySpawnCoroutine;
 
-    bool isMiniBossEmerged = false;  // ½ºÆù for¹® Å»ÃâÀ»À§ÇÑ ºÒ °ª ->uiÅØ½ºÆ®ÇÑ¹ø¸¸º¸¿©ÁÖ±âÀ§ÇØ
+    bool isMiniBossEmerged = false;  // ìŠ¤í° forë¬¸ íƒˆì¶œì„ìœ„í•œ ë¶ˆ ê°’ ->uií…ìŠ¤íŠ¸í•œë²ˆë§Œë³´ì—¬ì£¼ê¸°ìœ„í•´
 
     private void MiniBossEmerged()
 	{
@@ -91,7 +91,7 @@ public class EnemySpawner : MonoBehaviour
 		}
     }
 
-    //int index= Random.Range(1,3) Àº 1°ú 2 ¸®ÅÏ
+    //int index= Random.Range(1,3) ì€ 1ê³¼ 2 ë¦¬í„´
     private void SpawnBoss()
     {
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);

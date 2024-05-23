@@ -44,16 +44,16 @@ public class Player : MonoBehaviour
     private TextMeshProUGUI damageText;
     [SerializeField]
     private TextMeshProUGUI itemGetText;
-
-
     private float dashTime;
     private Vector3 dashVec;
 
-    bool isFlipped = false;
+    private bool isFlipped = false;
     public float additiveDmg;
 
-    bool isRolling = false;
-    void Start()
+    private bool isRolling = false;
+    public FixedJoystick joystick;
+    
+    void Awake()
     {
         animator = GetComponent<Animator>();
         hpBar=GetComponentInChildren<HpBar>();
@@ -62,8 +62,7 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalcolor = spriteRenderer.color;
     }
-     
-    // Update is called once per frame
+    
     void Update()
     {
 		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

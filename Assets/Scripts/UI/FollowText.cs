@@ -19,7 +19,7 @@ public class FollowText : MonoBehaviour
 
 	void LateUpdate()
 	{
-		if (target) //target º¯¼ö°¡ NullÀÌ ¾Æ´Ï¸é ½ÇÇà
+		if (target) //target ë³€ìˆ˜ê°€ Nullì´ ì•„ë‹ˆë©´ ì‹¤í–‰
 		{
 			rect.position = Camera.main.WorldToScreenPoint(target.position+offset);
 		}
@@ -27,6 +27,6 @@ public class FollowText : MonoBehaviour
 
 	private void OnDisable()
 	{
-		target = null; //ºñÈ°¼ºÈ­ ½Ã ÃÊ±âÈ­
+		target = null; //ë¹„í™œì„±í™” ì‹œ ì´ˆê¸°í™”
 	}
 }

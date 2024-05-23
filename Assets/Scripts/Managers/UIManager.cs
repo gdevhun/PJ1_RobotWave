@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void NotifyBossText() //º¸½º“G ÁØº¸½º ¾Ë¸²ÅØ½ºÆ® (notifyText ½ºÅ©¸³Æ®¿¬°á)
+    public void NotifyBossText() //ë³´ìŠ¤ë° ì¤€ë³´ìŠ¤ ì•Œë¦¼í…ìŠ¤íŠ¸ (notifyText ìŠ¤í¬ë¦½íŠ¸ì—°ê²°)
 	{
         NotifyBossPanel.SetActive(true);
         NotifyBossPanel.GetComponentInChildren<NotifyText>().DisplayBossMessage();
@@ -39,47 +39,47 @@ public class UIManager : MonoBehaviour
 
 	private async UniTaskVoid UnActiveBossPanel()
 	{   
-        //¸Ş¼¼Áö Ãâ·Â ÈÄ ºñÈ°¼ºÈ­¸¦ À§ÇÑ ÇÔ¼ö
+        //ë©”ì„¸ì§€ ì¶œë ¥ í›„ ë¹„í™œì„±í™”ë¥¼ ìœ„í•œ í•¨ìˆ˜
         await UniTask.Delay(TimeSpan.FromSeconds(6f));
         NotifyBossPanel.SetActive(false);
 	}
     private async UniTaskVoid UnActiveMiniBossPanel()
     {   
-        //¸Ş¼¼Áö Ãâ·Â ÈÄ ºñÈ°¼ºÈ­¸¦ À§ÇÑ ÇÔ¼ö
+        //ë©”ì„¸ì§€ ì¶œë ¥ í›„ ë¹„í™œì„±í™”ë¥¼ ìœ„í•œ í•¨ìˆ˜
         await UniTask.Delay(TimeSpan.FromSeconds(5f));
         NotifyMiniBossPanel.SetActive(false);
     } 
     
 
 
-    public void ActiveItemScene1()  //ItemPurplePanel ¾×Æ¼ºê
+    public void ActiveItemScene1()  //ItemPurplePanel ì•¡í‹°ë¸Œ
     {
         ItemPurplePanel.gameObject.SetActive(true);
         PauseGame();
 
     }
-    public void ActiveItemScene2()  //ItemRedPanel ¾×Æ¼ºê
+    public void ActiveItemScene2()  //ItemRedPanel ì•¡í‹°ë¸Œ
     {
         ItemRedPanel.gameObject.SetActive(true);
         PauseGame();
     }
-    public void ActiveItemScene3()  //ItemDiaPanel ¾×Æ¼ºê
+    public void ActiveItemScene3()  //ItemDiaPanel ì•¡í‹°ë¸Œ
     {
         ItemDiaPanel.gameObject.SetActive(true);
         PauseGame();
     }
 
 
-    // Æ¯Á¤ ÇÔ¼ö¸¦ È£ÃâÇÏ¿© °ÔÀÓ È­¸é Áß´Ü ¹× Àç½ÃÀÛ
+    // íŠ¹ì • í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ì—¬ ê²Œì„ í™”ë©´ ì¤‘ë‹¨ ë° ì¬ì‹œì‘
     public void PauseAndResumeGame()
     {
-        // °ÔÀÓÀ» Áß´ÜÇÏ°í ¿øÇÏ´Â Ã³¸®¸¦ ¼öÇà
+        // ê²Œì„ì„ ì¤‘ë‹¨í•˜ê³  ì›í•˜ëŠ” ì²˜ë¦¬ë¥¼ ìˆ˜í–‰
         PauseGame();
     }
     public void PauseGame()
     {
-        // °ÔÀÓÀ» Áß´ÜÇÏ´Â ÄÚµå ÀÛ¼º
-        Time.timeScale = 0f; // °ÔÀÓ ½Ã°£À» Á¤Áö
+        // ê²Œì„ì„ ì¤‘ë‹¨í•˜ëŠ” ì½”ë“œ ì‘ì„±
+        Time.timeScale = 0f; // ê²Œì„ ì‹œê°„ì„ ì •ì§€
     }
 
     public void ResumeGame()
@@ -98,7 +98,7 @@ public class UIManager : MonoBehaviour
         {
             ItemDiaPanel.SetActive(false);
         }
-        Time.timeScale = 1f; // °ÔÀÓ ½Ã°£À» ¿ø·¡´ë·Î º¹¿ø
+        Time.timeScale = 1f; // ê²Œì„ ì‹œê°„ì„ ì›ë˜ëŒ€ë¡œ ë³µì›
         SoundManager.instance.PlaySFX("GunGrab", 1f);
     }
 }

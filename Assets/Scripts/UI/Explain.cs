@@ -32,26 +32,26 @@ public class Explain : MonoBehaviour
 	}
 	IEnumerator ShowTextSequence()
 	{
-		// °¢ TextMeshProUGUI ¿ä¼Ò¸¦ ¼ø¼­´ë·Î º¸ÀÌ°Ô ÇÏ±â À§ÇØ ·çÇÁ »ç¿ë
+		// ê° TextMeshProUGUI ìš”ì†Œë¥¼ ìˆœì„œëŒ€ë¡œ ë³´ì´ê²Œ í•˜ê¸° ìœ„í•´ ë£¨í”„ ì‚¬ìš©
 		for (int i = 0; i < mytext.Length; i++)
 		{
-			mytext[i].gameObject.SetActive(true); // TextMeshProUGUI È°¼ºÈ­
-			yield return StartCoroutine(Typing(mytext[i])); // Å¸ÀÌÇÎ ÄÚ·çÆ¾ È£Ãâ
-			messagenum++; //Â÷·Ê·Î ÀÌ¹ÌÁö¸¦ ¶ç¿ì±âÀ§ÇÑ ·ÎÁ÷º¯¼ö
+			mytext[i].gameObject.SetActive(true); // TextMeshProUGUI í™œì„±í™”
+			yield return StartCoroutine(Typing(mytext[i])); // íƒ€ì´í•‘ ì½”ë£¨í‹´ í˜¸ì¶œ
+			messagenum++; //ì°¨ë¡€ë¡œ ì´ë¯¸ì§€ë¥¼ ë„ìš°ê¸°ìœ„í•œ ë¡œì§ë³€ìˆ˜
 		}
-		//¸ğµç ÀÌ¹ÌÁö¿Í Å¸ÀÌÇÎ ·ÎÁ÷ÀÌ ³¡³ª¸é Ä«¿îÆ® ÄÚ·çÆ¾ ½ÇÇà.
+		//ëª¨ë“  ì´ë¯¸ì§€ì™€ íƒ€ì´í•‘ ë¡œì§ì´ ëë‚˜ë©´ ì¹´ìš´íŠ¸ ì½”ë£¨í‹´ ì‹¤í–‰.
 		yield return StartCoroutine(CountSecond());
 
-		SceneManager.LoadScene("GameScene"); //Ä«¿îÆ®°¡1ÀÌµÇ¸é °ÔÀÓ½ÅÀ¸·Î ÀüÈ¯.
+		SceneManager.LoadScene("GameScene"); //ì¹´ìš´íŠ¸ê°€1ì´ë˜ë©´ ê²Œì„ì‹ ìœ¼ë¡œ ì „í™˜.
 	}
-	IEnumerator CountSecond() //Ä«¿îÆ®¼¼´Â ÄÚ·çÆ¾ÇÔ¼ö
+	IEnumerator CountSecond() //ì¹´ìš´íŠ¸ì„¸ëŠ” ì½”ë£¨í‹´í•¨ìˆ˜
 	{
 		int mySec = 5;
 
 		while (mySec > 0)
 		{
-			countdownText.text = mySec.ToString() + "ÃÊ µÚ °ÔÀÓ½ÃÀÛ!"; // ¼ıÀÚ¸¦ ¹®ÀÚ¿­·Î º¯È¯ÇÏ¿© ½Å¿¡ Ç¥½Ã
-			yield return new WaitForSeconds(1); // 1ÃÊ ´ë±â
+			countdownText.text = mySec.ToString() + "ì´ˆ ë’¤ ê²Œì„ì‹œì‘!"; // ìˆ«ìë¥¼ ë¬¸ìì—´ë¡œ ë³€í™˜í•˜ì—¬ ì‹ ì— í‘œì‹œ
+			yield return new WaitForSeconds(1); // 1ì´ˆ ëŒ€ê¸°
 			mySec--;
 		}
 	}
@@ -82,7 +82,7 @@ public class Explain : MonoBehaviour
 	public void OnImage(Image image)
 	{
 		if (image != null)
-		{   //ÀÌ¹ÌÁö È°¼ºÈ­ ÇÔ¼ö
+		{   //ì´ë¯¸ì§€ í™œì„±í™” í•¨ìˆ˜
 			image.gameObject.SetActive(true);
 			SoundManager.instance.PlaySFX("Button");
 		}

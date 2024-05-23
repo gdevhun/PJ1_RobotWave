@@ -46,7 +46,7 @@ public class EnemyDeadManager : MonoBehaviour
 
         }
         
-        // ¸ğµç ¿¡³×¹ÌÁ×À½ÀÌÆåÆ®°¡ È°¼ºÈ­µÇ¾î ÀÖ´Ù¸é »õ·Î¿î °´Ã¼ »ı¼ºÇÏ¿© ¹İÈ¯
+        // ëª¨ë“  ì—ë„¤ë¯¸ì£½ìŒì´í™íŠ¸ê°€ í™œì„±í™”ë˜ì–´ ìˆë‹¤ë©´ ìƒˆë¡œìš´ ê°ì²´ ìƒì„±í•˜ì—¬ ë°˜í™˜
         GameObject exgo = Instantiate(deadPrefab);
         exgo.SetActive(true);
         enemyDeadAnimPool.Add(exgo);

@@ -13,7 +13,7 @@ public class NotifyText : MonoBehaviour
 
     IEnumerator DisplayText(string message)
     {
-        notifyText.text = ""; //Ãâ·ÂÀü¿¡ ºñ¿ö³õ±â
+        notifyText.text = ""; //ì¶œë ¥ì „ì— ë¹„ì›Œë†“ê¸°
         for (int i = 0; i < message.Length; i++)
         {
             notifyText.text += message[i];

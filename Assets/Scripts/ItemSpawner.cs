@@ -17,10 +17,10 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField]
     private float spawnInterval;
 
-    //¾ÆÀÌÅÛ½ºÆù ÄÚ·çÆ¾ ¼±¾ğ
+    //ì•„ì´í…œìŠ¤í° ì½”ë£¨í‹´ ì„ ì–¸
     private Coroutine itemSpawnCoroutine;
 
-    // ±â·ÏµÈ À§Ä¡µéÀ» ÀúÀåÇÏ´Â ¸®½ºÆ®
+    // ê¸°ë¡ëœ ìœ„ì¹˜ë“¤ì„ ì €ì¥í•˜ëŠ” ë¦¬ìŠ¤íŠ¸
     private List<Vector2> usedSpawnPositions = new List<Vector2>();
 
 
@@ -80,11 +80,11 @@ public class ItemSpawner : MonoBehaviour
 
         if (availableIndices.Count == 0)
         {
-            // ¸ğµç ½ºÆù Æ÷ÀÎÆ®°¡ »ç¿ëÁßÀÏ ¶§
+            // ëª¨ë“  ìŠ¤í° í¬ì¸íŠ¸ê°€ ì‚¬ìš©ì¤‘ì¼ ë•Œ
             return -1;
         }
 
-        // »ç¿ë °¡´ÉÇÑ ½ºÆù Æ÷ÀÎÆ® Áß¿¡¼­ ·£´ıÇÏ°Ô ¼±ÅÃ
+        // ì‚¬ìš© ê°€ëŠ¥í•œ ìŠ¤í° í¬ì¸íŠ¸ ì¤‘ì—ì„œ ëœë¤í•˜ê²Œ ì„ íƒ
         int randomIndex = Random.Range(0, availableIndices.Count);
         return availableIndices[randomIndex];
     }

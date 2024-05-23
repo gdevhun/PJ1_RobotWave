@@ -17,14 +17,14 @@ public class MenuController : MonoBehaviour
 	{
 		SoundManager.instance.PlayBGM("LobbyBGM");
 	}
-	IEnumerator CountSecond() //Ä«¿îÆ®¼¼´Â ÄÚ·çÆ¾ÇÔ¼ö
+	IEnumerator CountSecond() //ì¹´ìš´íŠ¸ì„¸ëŠ” ì½”ë£¨í‹´í•¨ìˆ˜
 	{
 		int mySec = 3;
 		countdownText.gameObject.SetActive(true);
 		while (mySec > 0)
 		{
-			countdownText.text = mySec.ToString() + "ÃÊ ÈÄ °ÔÀÓ½ÃÀÛ!"; // ¼ıÀÚ¸¦ ¹®ÀÚ¿­·Î º¯È¯ÇÏ¿© ½Å¿¡ Ç¥½Ã
-			yield return new WaitForSeconds(1); // 1ÃÊ ´ë±â
+			countdownText.text = mySec.ToString() + "ì´ˆ í›„ ê²Œì„ì‹œì‘!"; // ìˆ«ìë¥¼ ë¬¸ìì—´ë¡œ ë³€í™˜í•˜ì—¬ ì‹ ì— í‘œì‹œ
+			yield return new WaitForSeconds(1); // 1ì´ˆ ëŒ€ê¸°
 			mySec--;
 		}
 		

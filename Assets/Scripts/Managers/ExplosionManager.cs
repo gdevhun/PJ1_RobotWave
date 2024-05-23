@@ -46,7 +46,7 @@ public class ExplosionManager : MonoBehaviour
     }
 
     public GameObject GetAvailableExgo2(Vector3 vec, Quaternion quat)
-    {   //Àû È­¿° ÇÇ°İ ¿¡´Ï¸ŞÀÌ¼Ç ÀÌÆåÆ®
+    {   //ì  í™”ì—¼ í”¼ê²© ì—ë‹ˆë©”ì´ì…˜ ì´í™íŠ¸
         for (int i = 0; i < explosionPool2.Count; i++)
         {
             if (!explosionPool2[i].gameObject.activeInHierarchy)
@@ -58,7 +58,7 @@ public class ExplosionManager : MonoBehaviour
             }
 
         }
-        // ¸ğµç ÆøÆÈÀÌ È°¼ºÈ­µÇ¾î ÀÖ´Ù¸é »õ·Î¿î ÆøÆÈÀ» »ı¼ºÇÏ¿© ¹İÈ¯
+        // ëª¨ë“  í­íŒ”ì´ í™œì„±í™”ë˜ì–´ ìˆë‹¤ë©´ ìƒˆë¡œìš´ í­íŒ”ì„ ìƒì„±í•˜ì—¬ ë°˜í™˜
         GameObject exgo = Instantiate(explosionPrefab2, vec, quat);
         exgo.SetActive(true);
         explosionPool2.Add(exgo);
@@ -67,7 +67,7 @@ public class ExplosionManager : MonoBehaviour
     }
 
         public GameObject GetAvailableExgo(Vector3 vec, Quaternion quat)
-    {   //Àû ÃÑ¾Ë ÇÇ°İ ¿¡´Ï¸ŞÀÌ¼Ç ÀÌÆåÆ®
+    {   //ì  ì´ì•Œ í”¼ê²© ì—ë‹ˆë©”ì´ì…˜ ì´í™íŠ¸
         for (int i = 0; i < explosionPool.Count; i++)
         {
             if (!explosionPool[i].gameObject.activeInHierarchy)
@@ -79,7 +79,7 @@ public class ExplosionManager : MonoBehaviour
             }
 
         }
-        // ¸ğµç ÆøÆÈÀÌ È°¼ºÈ­µÇ¾î ÀÖ´Ù¸é »õ·Î¿î ÆøÆÈÀ» »ı¼ºÇÏ¿© ¹İÈ¯
+        // ëª¨ë“  í­íŒ”ì´ í™œì„±í™”ë˜ì–´ ìˆë‹¤ë©´ ìƒˆë¡œìš´ í­íŒ”ì„ ìƒì„±í•˜ì—¬ ë°˜í™˜
         GameObject exgo = Instantiate(explosionPrefab,vec,quat);
         exgo.SetActive(true);
         explosionPool.Add(exgo);
